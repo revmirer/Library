@@ -1,0 +1,10 @@
+App\Entity\Genre:
+    type: entity
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+      genre:
+        type: string
+        length: 255

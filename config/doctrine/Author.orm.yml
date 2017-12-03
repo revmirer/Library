@@ -1,0 +1,14 @@
+App\Entity\Author:
+    type: entity
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+      name:
+        type: string
+        length: 255
+      birthday:
+        type: date
+      gender_id:
+        type: integer

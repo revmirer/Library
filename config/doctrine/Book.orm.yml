@@ -1,0 +1,22 @@
+App\Entity\Book:
+    type: entity
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        title:
+            type: string
+            length: 255
+        added_on:
+          type: date
+        published_on:
+          type: date
+        raiting:
+            type: decimal
+            scale: 2
+            nullable: true
+        genre_id:
+          type: integer
+        author_id:
+          type: integer
