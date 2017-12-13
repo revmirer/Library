@@ -1,5 +1,6 @@
 App\Entity\Book:
     type: entity
+    repositoryClass: App\Repository\BookRepository
     id:
         id:
             type: integer
@@ -16,6 +17,8 @@ App\Entity\Book:
             type: decimal
             scale: 2
             nullable: true
+            options:
+              default: 0
         genre_id:
           type: integer
         author_id:

@@ -1,4 +1,5 @@
 App\Entity\Genre:
+    repositoryClass: App\Repository\GenreRepository
     type: entity
     id:
         id:

@@ -1,5 +1,6 @@
 App\Entity\Author:
     type: entity
+    repositoryClass: App\Repository\AuthorRepository
     id:
         id:
             type: integer

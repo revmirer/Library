@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,14 +9,13 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/">Task Tracker</a>
+            <a class="navbar-brand" href="/">Library</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/">Список задач</a>
-                    <a class="nav-item nav-link" href="/addTicket/">Создать задачу</a>
+                    <a class="nav-item nav-link" href="/">Список книг</a>
                 </div>
             </div>
             <div class="navbar-nav">
@@ -24,6 +24,18 @@
         </div>
     </nav>
     <div class="container">
+        <br>
+        <br>
+        <br>
+        <br>
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endfor %}
+
         {% block body %}{% endblock %}
     </div>
 </body>

@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Book;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -17,6 +18,8 @@ class IndexController extends Controller
 
     public function index()
     {
-        return $this->render('list/index.html.twig');
+        $books = $this->getDoctrine()->getRepository(Book::class)->findAllBooks();
+
+        return $this->render('list/index.html.twig', ['books' => $books]);
     }
 }

@@ -1,3 +1,15 @@
 index:
     path: /
     controller: App\Controller\IndexController::index
+edit_book:
+    path: /book/{id}/
+    controller: App\Controller\BookController::show
+    requirements:
+      id: '\d+'
+    methods: ['GET', 'POST']
+remove_book:
+    path: /book/remove/{id}/
+    controller: App\Controller\BookController::remove
+    requirements:
+      id: '\d+'
+    methods: ['GET']

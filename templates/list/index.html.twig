@@ -1,5 +1,35 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>ozozoza</h1>    <div class="div-inline"><h1 class="mt-5 div-inline">Добавить задачу</h1></div>
+    <div class="div-inline"><h1 class="mt-5 div-inline">Книги</h1></div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Рейтинг</th>
+            <th>Название</th>
+            <th>Автор</th>
+            <th>Жанр</th>
+            <th>Добавлено</th>
+            <th>Издано</th>
+            <th>Редактировать</th>
+            <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <th scope="row">+{{ book.raiting }}-</th>
+                <td>{{ book.title }}</td>
+                <td>{{ book.author_name }}</td>
+                <td>{{ book.genre }}</td>
+                <td>{{ book.added_on|date("d.m.Y") }}</td>
+                <td>{{ book.published_on|date("d.m.Y") }}</td>
+                <td><a href="/book/{{ book.id }}/"><img src="{{ asset('images/pencil.png') }}" alt="Symfony!" /></a></td>
+                <td><a href="/book/remove/{{ book.id }}/"><img src="{{ asset('images/x.png') }}" alt="Symfony!" /></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
