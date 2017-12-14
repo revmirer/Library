@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="div-inline"><h1 class="mt-5 div-inline">Книги</h1></div>
+    <div class="div-inline"><h1 class="mt-5 div-inline">Книги жанра "{{ books[0].genre }}"</h1></div>
 
     <table class="table">
         <thead>
@@ -17,7 +17,7 @@
         </tr>
         </thead>
         <tbody>
-            {% for book in books %}
+        {% for book in books %}
             <tr>
                 <th scope="row">+{{ book.raiting }}-</th>
                 <td>{{ book.title }}</td>
@@ -28,7 +28,7 @@
                 <td><a href="{{ path('edit_book', {'id':  book.id }) }}"><img src="{{ asset('images/pencil.png') }}" alt="Symfony!" /></a></td>
                 <td><a href="{{ path('remove_book', {'id':  book.id }) }}"><img src="{{ asset('images/x.png') }}" alt="Symfony!" /></a></td>
             </tr>
-            {% endfor %}
+        {% endfor %}
         </tbody>
     </table>
 

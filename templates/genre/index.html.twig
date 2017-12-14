@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="div-inline"><h1 class="mt-5 div-inline">Жанры</h1></div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Название</th>
+            <th>Редактировать</th>
+            <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for genre in genres %}
+            <tr>
+                <td><a href="{{ path('filter_books_by_genre', {'filterId':  genre.id }) }}">{{ genre.genre }}</a></td>
+                <td><a href="{{ path('edit_genre', {'id':  genre.id }) }}"><img src="{{ asset('images/pencil.png') }}" alt="Symfony!" /></a></td>
+                <td><a href="{{ path('remove_genre', {'id':  genre.id }) }}"><img src="{{ asset('images/x.png') }}" alt="Symfony!" /></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

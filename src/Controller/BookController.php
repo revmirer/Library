@@ -23,7 +23,32 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class BookController extends Controller
 {
-    public function show($id, Request $request)
+    const FILTER_FIELDS = ['genre', 'author'];
+
+    public function showFilteredByAuthorBooks($filterId, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $books = $em->getRepository(Book::class)->findBooksByAuthorFilter($filterId);
+
+        return $this->render('author/booklist.html.twig', ['books' => $books]);
+    }
+
+    public function showFilteredByGenreBooks($filterId, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $books = $em->getRepository(Book::class)->findBooksByGenreFilter($filterId);
+
+        return $this->render('genre/booklist.html.twig', ['books' => $books]);
+    }
+
+    public function showAll()
+    {
+        $books = $this->getDoctrine()->getRepository(Book::class)->findAllBooks();
+
+        return $this->render('list/index.html.twig', ['books' => $books]);
+    }
+    
+    public function edit($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         if (!$id) {

@@ -1,9 +1,22 @@
 index:
     path: /
-    controller: App\Controller\IndexController::index
+    controller: App\Controller\BookController::showAll
+filter_books_by_author:
+    path: /books/author/{filterId}
+    controller: App\Controller\BookController::showFilteredByAuthorBooks
+    requirements:
+        filter: 'author|genre'
+        filterId: '\d+'
+    methods: ['GET']
+filter_books_by_genre:
+    path: /books/genre/{filterId}
+    controller: App\Controller\BookController::showFilteredByGenreBooks
+    requirements:
+        filterId: '\d+'
+    methods: ['GET']
 edit_book:
     path: /book/{id}/
-    controller: App\Controller\BookController::show
+    controller: App\Controller\BookController::edit
     requirements:
       id: '\d+'
     methods: ['GET', 'POST']
@@ -13,3 +26,18 @@ remove_book:
     requirements:
       id: '\d+'
     methods: ['GET']
+genres_list:
+    path: /genre/all
+    controller: App\Controller\GenreController::index
+edit_genre:
+    path: /genre/{id}/
+    controller: App\Controller\GenreController::edit
+    requirements:
+      id: '\d+'
+    methods: ['GET', 'POST']
+remove_genre:
+    path: /genre/remove/{id}/
+    controller: App\Controller\GenreController::remove
+    requirements:
+      id: '\d+'
+    methods: ['GET', 'POST']
