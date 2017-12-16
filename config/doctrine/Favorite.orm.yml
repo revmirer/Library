@@ -1,0 +1,13 @@
+App\Entity\Favorite:
+    type: entity
+    repositoryClass: App\Repository\FavoriteRepository
+    id:
+      id:
+        type: integer
+        generator: { strategy: AUTO }
+    fields:
+      user_id:
+        type: integer
+      book_id:
+        type: integer
+      active:

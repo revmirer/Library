@@ -18,3 +18,5 @@ App\Entity\User:
         length: 60
       is_active:
         type: boolean
+        options:
+          default: true

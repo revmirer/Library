@@ -9,4 +9,12 @@
     <div><b>Рейтинг: </b>{{ book.raiting }}</div>
     <div><b>Жанр: </b>{{ book.genre }}</div>
     <div><b>Автор: </b>{{ book.author_name }}</div>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        {% if isFavorite %}
+            <div><b>Книга находится у вас в избранном</b></div>
+            <div><a href="{{ path('remove_from_favorites', {'id':  book.id }) }}"><button type="button" class="btn btn-secondary btn-sm">Убрать из избранного</button></a></div>
+        {% else %}
+            <div><a href="{{ path('add_to_favorites', {'id':  book.id }) }}"><button type="button" class="btn btn-secondary btn-sm">Добавить в избранное</button></a></div>
+        {% endif %}
+    {% endif %}
 {% endblock %}

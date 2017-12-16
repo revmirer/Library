@@ -11,6 +11,7 @@ namespace App\Controller;
 
 use App\Entity\Author;
 use App\Entity\Book;
+use App\Entity\Favorite;
 use App\Entity\Genre;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -84,12 +85,16 @@ class BookController extends Controller
         if (!$id) {
             throw $this->createNotFoundException('');
         }
-        $book = $this->getDoctrine()->getRepository(Book::class)->findBooksById($id);
+        $book = $em->getRepository(Book::class)->findBooksById($id);
         if (!$book) {
             throw $this->createNotFoundException();
         }
+        if ($this->getUser()->getId()) {
+            $isFavorite = count($em->getRepository(Favorite::class)->findBy(['user_id' => $this->getUser()->getId(), 'book_id' => $id, 'active' => '1']));
+        }
 
-        return $this->render('book/show.html.twig', ['book' => $book[0]]);
+
+        return $this->render('book/show.html.twig', ['book' => $book[0], 'isFavorite' => $isFavorite]);
     }
 
     public function showFilteredByAuthorBooks($filterId)

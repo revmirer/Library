@@ -8,6 +8,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Book;
+use App\Entity\Favorite;
 use App\Entity\User;
 use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -91,7 +93,6 @@ class UserController extends Controller
             ->add('Сохранить', SubmitType::class, array('label' => 'Cохранить'))
             ->getForm()
         ;
-
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
             $user = $em->getRepository(User::class)->findBy(['username' => $request->request->get('form')['username']]);
@@ -112,9 +113,83 @@ class UserController extends Controller
                 );
                 $em->flush();
             }
+        } else {
+            $favoriteBooks = $em->getRepository(Book::class)->findFavoriteBooksOfUser($this->getUser()->getId());
         }
 
-        return $this->render('user/edit.html.twig', ['form' => $form->createView()]);
+        return $this->render('user/edit.html.twig', ['form' => $form->createView(), 'favoriteBooks' => $favoriteBooks]);
+    }
+
+    public function addToFavorites($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if (!$id) {
+            throw $this->createNotFoundException('');
+        }
+
+        $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
+
+        if (!$book){
+            throw $this->createNotFoundException('');
+        } else {
+            $favorite = $em->getRepository(Favorite::class)->findBy(['user_id' => $this->getUser()->getId(), 'book_id' => $id]);
+            if (!$favorite) {
+                $favorite = new Favorite();
+                $favorite->setBookId($id);
+                $favorite->setUserId($this->getUser()->getId());
+            } else {
+                $favorite = $favorite[0];
+            }
+            $favorite->setActive(true);
+            $this->addFlash(
+                'success',
+                'Книга успешно добавлена в избранное.'
+            );
+            $em->persist($favorite);
+            $em->flush();
+
+            return $this->redirect(
+                $request
+                    ->headers
+                    ->get('referer')
+            );
+        }
+    }
+
+    public function removeFromFavorites($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if (!$id) {
+            throw $this->createNotFoundException('');
+        }
+
+        $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
+
+        if (!$book){
+            throw $this->createNotFoundException('');
+        } else {
+            $favorite = $em->getRepository(Favorite::class)->findBy(['user_id' => $this->getUser()->getId(), 'book_id' => $id])[0];
+            if (!$favorite) {
+                $this->addFlash(
+                    'success',
+                    'Книга отсутсвует у вас в избранном.'
+                );
+            } else {
+                $this->addFlash(
+                    'success',
+                    'Книга успешно удалена из избранного'
+                );
+                $favorite->setActive(false);
+                $em->persist($favorite);
+                $em->flush();
+            }
+            return $this->redirect(
+                $request
+                    ->headers
+                    ->get('referer')
+            );
+
+        }
     }
 
 }
