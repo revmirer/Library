@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="div-inline">
+        <h1 class="mt-5 div-inline">Авторы
+            <a href="{{ path('create_author') }}"><button type="button" class="btn btn-secondary btn-sm">Добавить</button></a>
+        </h1>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Название</th>
+            <th>Редактировать</th>
+            <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for author in authors %}
+            <tr>
+                <td><a href="{{ path('filter_books_by_author', {'filterId':  author.id }) }}">{{ author.name }}</a></td>
+                <td><a href="{{ path('edit_author', {'id':  author.id }) }}"><img src="{{ asset('images/pencil.png') }}"/></a></td>
+                <td><a href="{{ path('remove_author', {'id':  author.id }) }}"><img src="{{ asset('images/x.png') }}"/></a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

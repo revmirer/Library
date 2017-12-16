@@ -1,5 +1,6 @@
 App\Entity\Gender:
     type: entity
+    repositoryClass: App\Repository\GenderRepository
     id:
       id:
         type: integer

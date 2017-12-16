@@ -27,6 +27,39 @@ class GenreController extends Controller
         return $this->render('genre/index.html.twig', ['genres' => $genre]);
     }
 
+    public function create(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $genre = new Genre();
+        $form = $this->createFormBuilder($genre)
+            ->setAction($this->generateUrl('create_genre'))
+            ->setMethod('POST')
+            ->add('genre', TextType::class, ['label' => 'Название'])
+            ->add('id', HiddenType::class)
+            ->add('Создать', SubmitType::class, array('label' => 'Создать'))
+            ->getForm();
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+            if (!$form->isValid()){
+                $this->addFlash(
+                    'danger',
+                    'Введенные данные невалидны'
+                );
+            } else {
+                $em->persist($genre);
+                $this->addFlash(
+                    'danger',
+                    'Жанр успешно создан.'
+                );
+                $em->flush();
+                return $this->redirectToRoute('genres_list');
+            }
+        }
+
+        return $this->render('genre/edit.html.twig', ['form' => $form->createView()]);
+    }
     public function edit($id, Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -51,7 +84,7 @@ class GenreController extends Controller
             $form->handleRequest($request);
             if (!$form->isValid()){
                 $this->addFlash(
-                    'alert',
+                    'danger',
                     'Введенные данные невалидны'
                 );
             } else {

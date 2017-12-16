@@ -23,7 +23,60 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class BookController extends Controller
 {
-    const FILTER_FIELDS = ['genre', 'author'];
+    public function create(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $genres = $em->getRepository(Genre::class)->findAllGenresForBook();
+        $authors = $em->getRepository(Author::class)->findAllAuthorsForBook();
+        $book = new Book();
+
+        $form = $this->createFormBuilder($book)
+            ->setAction($this->generateUrl('create_book'))
+            ->setMethod('POST')
+            ->add('title', TextType::class, ['label' => 'Название'])
+            ->add('added_on', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+                'label' => 'Дата занесения в каталог'
+            ])
+            ->add('published_on', DateType::class, [
+                'widget' => 'single_text',
+                'format' => 'yyyy-MM-dd',
+                'label' => 'Дата выпуска'
+            ])
+            ->add('author_id', ChoiceType::class, [
+                'choices' => $authors,
+                'label' => 'Автор'
+            ])
+            ->add('genre_id', ChoiceType::class, [
+                'choices' => $genres,
+                'label' => 'Жанр'
+            ])
+            ->add('id', HiddenType::class)
+            ->add('Создать', SubmitType::class, array('label' => 'Создать'))
+            ->getForm()
+        ;
+
+        if ($request->getMethod() == 'POST') {
+            $form->handleRequest($request);
+            if (!$form->isValid()){
+                $this->addFlash(
+                    'danger',
+                    'Введенные данные невалидны'
+                );
+            } else {
+                $em->persist($book);
+                $this->addFlash(
+                    'success',
+                    'Книга добавлена.'
+                );
+                $em->flush();
+                return $this->redirectToRoute('index');
+            }
+        }
+
+        return $this->render('book/show.html.twig', ['form' => $form->createView()]);
+    }
 
     public function showFilteredByAuthorBooks($filterId, Request $request)
     {
@@ -93,7 +146,7 @@ class BookController extends Controller
             $form->handleRequest($request);
             if (!$form->isValid()){
                 $this->addFlash(
-                    'alert',
+                    'danger',
                     'Введенные данные невалидны'
                 );
             } else {
