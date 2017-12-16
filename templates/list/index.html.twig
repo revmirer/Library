@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
+{% block title %}Недавно добавленные книги{% endblock %}
 {% block body %}
-    <div class="div-inline"><h1 class="mt-5 div-inline">Книги
+    <div class="div-inline"><h1 class="mt-5 div-inline">Недавно добавленные книги
             <a href="{{ path('create_book') }}"><button type="button" class="btn btn-secondary btn-sm">Добавить</button></a></h1>
     </div>
 
@@ -22,7 +23,7 @@
             {% for book in books %}
             <tr>
                 <th scope="row">+{{ book.raiting }}-</th>
-                <td>{{ book.title }}</td>
+                <td><a href="{{ path('show_book', {'id':  book.id }) }}">{{ book.title }}</a></td>
                 <td><a href="{{ path('filter_books_by_author', {'filterId':  book.author_id }) }}">{{ book.author_name }}</a></td>
                 <td><a href="{{ path('filter_books_by_genre', {'filterId':  book.genre_id }) }}">{{ book.genre }}</a></td>
                 <td>{{ book.added_on|date("d.m.Y") }}</td>

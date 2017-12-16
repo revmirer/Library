@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
+{% block title %}Книга "{{ book.title }}"{% endblock %}
 
 {% block body %}
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
     <div class="div-inline"><h1 class="mt-5 div-inline">Книга</h1></div>
-    {{ form_start(form) }}
-
-    {{ form_end(form) }}
+    <div><b>Название: </b>{{ book.title }}</div>
+    <div><b>Дата выпуска: </b>{{ book.published_on|date("d/m/Y") }}</div>
+    <div><b>Дата занесения в каталог: </b>{{ book.added_on|date("d/m/Y") }}</div>
+    <div><b>Рейтинг: </b>{{ book.raiting }}</div>
+    <div><b>Жанр: </b>{{ book.genre }}</div>
+    <div><b>Автор: </b>{{ book.author_name }}</div>
 {% endblock %}

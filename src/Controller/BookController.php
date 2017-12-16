@@ -75,10 +75,24 @@ class BookController extends Controller
             }
         }
 
-        return $this->render('book/show.html.twig', ['form' => $form->createView()]);
+        return $this->render('book/edit.html.twig', ['form' => $form->createView()]);
     }
 
-    public function showFilteredByAuthorBooks($filterId, Request $request)
+    public function show($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if (!$id) {
+            throw $this->createNotFoundException('');
+        }
+        $book = $this->getDoctrine()->getRepository(Book::class)->findBooksById($id);
+        if (!$book) {
+            throw $this->createNotFoundException();
+        }
+
+        return $this->render('book/show.html.twig', ['book' => $book[0]]);
+    }
+
+    public function showFilteredByAuthorBooks($filterId)
     {
         $em = $this->getDoctrine()->getManager();
         $books = $em->getRepository(Book::class)->findBooksByAuthorFilter($filterId);
@@ -86,7 +100,7 @@ class BookController extends Controller
         return $this->render('author/booklist.html.twig', ['books' => $books]);
     }
 
-    public function showFilteredByGenreBooks($filterId, Request $request)
+    public function showFilteredByGenreBooks($filterId)
     {
         $em = $this->getDoctrine()->getManager();
         $books = $em->getRepository(Book::class)->findBooksByGenreFilter($filterId);
@@ -105,12 +119,12 @@ class BookController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         if (!$id) {
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
         $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
 
         if (!$book){
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
 
         $genres = $em->getRepository(Genre::class)->findAllGenresForBook();
@@ -158,7 +172,7 @@ class BookController extends Controller
             }
         }
 
-        return $this->render('book/show.html.twig', ['form' => $form->createView()]);
+        return $this->render('book/edit.html.twig', ['form' => $form->createView()]);
 
     }
 
@@ -166,18 +180,20 @@ class BookController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         if (!$id) {
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
         $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
 
         if (!$book){
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
 
         $this->addFlash(
             'success',
             'Книга была успешно удалена'
         );
+        
+        
 
         return $this->redirectToRoute('index');
 

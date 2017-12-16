@@ -79,12 +79,12 @@ class AuthorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         if (!$id) {
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException();
         }
         $author = $this->getDoctrine()->getRepository(Author::class)->find($id);
 
         if (!$author){
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
 
         $genders = $em->getRepository(Gender::class)->findAllGenders();
@@ -130,13 +130,13 @@ class AuthorController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         if (!$id) {
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
 
         $author = $em->getRepository(Author::class)->find($id);
 
         if (!$author){
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
 
         $linkedBooksCount = count($em->getRepository(Book::class)->findBooksByAuthorFilter($id));

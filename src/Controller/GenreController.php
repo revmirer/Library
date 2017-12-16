@@ -64,12 +64,12 @@ class GenreController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         if (!$id) {
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
         $genre = $this->getDoctrine()->getRepository(Genre::class)->find($id);
 
         if (!$genre){
-            throw $this->createNotFoundException('No se encuentra la tarea con id = '.$id);
+            throw $this->createNotFoundException('');
         }
 
         $form = $this->createFormBuilder($genre)
@@ -78,7 +78,8 @@ class GenreController extends Controller
             ->add('genre', TextType::class, ['label' => 'Название'])
             ->add('id', HiddenType::class)
             ->add('Сохранить', SubmitType::class, array('label' => 'Cохранить'))
-            ->getForm();
+            ->getForm()
+        ;
 
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
