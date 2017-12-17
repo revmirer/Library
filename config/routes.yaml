@@ -42,6 +42,10 @@ remove_book_picure:
     requirements:
       id: '\d+'
     methods: ['GET']
+search_books:
+    path: /book/search/
+    controller: App\Controller\BookController::search
+    methods: ['POST']
 genres_list:
     path: /genre/all
     controller: App\Controller\GenreController::index

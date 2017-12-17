@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03420582-f6dd-41cd-9c19-efdf34549613" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/book/search_results.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/doctrine/Book.orm.yml" afterPath="$PROJECT_DIR$/config/doctrine/Book.orm.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/doctrine/User.orm.yml" afterPath="$PROJECT_DIR$/config/doctrine/User.orm.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/BookController.php" afterPath="$PROJECT_DIR$/src/Controller/BookController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Book.php" afterPath="$PROJECT_DIR$/src/Entity/Book.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/BookRepository.php" afterPath="$PROJECT_DIR$/src/Repository/BookRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html.twig" afterPath="$PROJECT_DIR$/templates/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/book/edit.html.twig" afterPath="$PROJECT_DIR$/templates/book/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/book/show.html.twig" afterPath="$PROJECT_DIR$/templates/book/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" />
     </list>
     <ignored path="Library.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,14 +30,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="routes.yaml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/list/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="10" />
-              <folding>
-                <marker date="1513499872989" expanded="true" signature="2605:2640" ph="..." />
-              </folding>
+            <state relative-caret-position="660">
+              <caret line="33" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,10 +43,68 @@
       <file leaf-file-name="BookController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-870">
-              <caret line="195" column="73" selection-start-line="195" selection-start-column="73" selection-end-line="195" selection-end-column="73" />
+            <state relative-caret-position="538">
+              <caret line="220" column="112" selection-start-line="220" selection-start-column="112" selection-end-line="220" selection-end-column="112" />
               <folding>
                 <element signature="e#118#140#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BookRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2831">
+              <caret line="186" column="28" selection-start-line="186" selection-start-column="28" selection-end-line="186" selection-end-column="28" />
+              <folding>
+                <marker date="1513511377445" expanded="true" signature="3931:4434" ph="SELECT b0_.i... book" />
+                <marker date="1513511377445" expanded="true" signature="5132:5684" ph="SELECT b0_.i... book" />
+                <marker date="1513511377445" expanded="true" signature="6420:6972" ph="SELECT b0_.i... book" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/book/edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_results.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/book/search_results.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="616">
+              <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="78" />
+              <folding>
+                <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,8 +113,8 @@
       <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="987">
-              <caret line="123" column="110" selection-start-line="123" selection-start-column="110" selection-end-line="123" selection-end-column="110" />
+            <state relative-caret-position="635">
+              <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="180" selection-end-column="14" />
               <folding>
                 <element signature="e#116#136#0#PHP" expanded="true" />
               </folding>
@@ -86,70 +132,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="51" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="51" />
+            <state relative-caret-position="477">
+              <caret line="34" column="77" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="77" />
               <folding>
                 <marker date="1513499814053" expanded="true" signature="484:564" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="services.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/services.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BookRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="37" column="228" selection-start-line="37" selection-start-column="228" selection-end-line="37" selection-end-column="228" />
-              <folding>
-                <marker date="1513498436480" expanded="true" signature="3931:4434" ph="SELECT b0_.i... book" />
-                <marker date="1513498436480" expanded="true" signature="5132:5684" ph="SELECT b0_.i... book" />
-                <marker date="1513498436480" expanded="true" signature="6420:6972" ph="SELECT b0_.i... book" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/book/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-66">
-              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -162,8 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/check.php" />
-        <option value="$PROJECT_DIR$/src/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/src/Controller/LuckyController.php" />
         <option value="$PROJECT_DIR$/config/packages/doctrine.yaml" />
@@ -205,14 +193,16 @@
         <option value="$PROJECT_DIR$/src/Entity/Book.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
-        <option value="$PROJECT_DIR$/templates/book/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/Repository/BookRepository.php" />
         <option value="$PROJECT_DIR$/templates/book/show.html.twig" />
         <option value="$PROJECT_DIR$/templates/user/edit.html.twig" />
-        <option value="$PROJECT_DIR$/config/routes.yaml" />
-        <option value="$PROJECT_DIR$/src/Controller/BookController.php" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/Repository/BookRepository.php" />
+        <option value="$PROJECT_DIR$/templates/book/searchresults.html.twig" />
+        <option value="$PROJECT_DIR$/templates/book/search_results.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/BookController.php" />
+        <option value="$PROJECT_DIR$/templates/book/edit.html.twig" />
       </list>
     </option>
   </component>
@@ -346,6 +336,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Library" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="author" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -355,7 +363,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="settings.editor.splitter.proportion" value="0.22113504" />
-    <property name="SearchEverywhereHistoryKey" value="User&#9;FILE&#9;file://F:/Работа/Library/src/Entity/User.php&#10;rout&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;services.y&#9;FILE&#9;file://F:/Работа/Library/config/services.yaml&#10;show&#9;FILE&#9;file://F:/Работа/Library/templates/book/show.html.twig&#10;BookRe&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;Book&#9;FILE&#9;file://F:/Работа/Library/src/Controller/BookController.php&#10;Fa&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Favorite.php&#10;route&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;rou&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Aut&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Author.php&#10;base&#9;FILE&#9;file://F:/Работа/Library/templates/base.html.twig&#10;IndexC&#9;null&#9;null&#10;EntityRepo&#9;null&#9;null&#10; srcDevDebugProjectContainer&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="Book&#9;FILE&#9;file://F:/Работа/Library/src/Controller/BookController.php&#10;User&#9;FILE&#9;file://F:/Работа/Library/src/Controller/UserController.php&#10;boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;showT&#9;FILE&#9;file://F:/Работа/Library/templates/book/show.html.twig&#10;rout&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;services.y&#9;FILE&#9;file://F:/Работа/Library/config/services.yaml&#10;show&#9;FILE&#9;file://F:/Работа/Library/templates/book/show.html.twig&#10;BookRe&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;Fa&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Favorite.php&#10;route&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;rou&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Aut&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Author.php&#10;base&#9;FILE&#9;file://F:/Работа/Library/templates/base.html.twig&#10;IndexC&#9;null&#9;null&#10;EntityRepo&#9;null&#9;null&#10; srcDevDebugProjectContainer&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -418,7 +426,7 @@
       <workItem from="1512323359435" duration="29049000" />
       <workItem from="1512928163852" duration="24190000" />
       <workItem from="1513126627897" duration="847000" />
-      <workItem from="1513213897667" duration="63420000" />
+      <workItem from="1513213897667" duration="69142000" />
     </task>
     <task id="LOCAL-00001" summary="Изначальный комит">
       <created>1512328333412</created>
@@ -504,11 +512,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513490175877</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Добавлена возможность загружать картинки для книг и пользователей">
+      <created>1513501351468</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1513501351468</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="122664000" />
+    <option name="totallyTimeSpent" value="128386000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1058" extended-state="6" />
@@ -533,6 +548,26 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.50429183" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5050392" sideWeight="0.49570817" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26180258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32922733" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -559,7 +594,8 @@
     <MESSAGE value="Добавлена возможность добавлять книги в избранное" />
     <MESSAGE value="Добавлен раздел &quot;похожие книги&quot; на страницу книги" />
     <MESSAGE value="Фикс заголовка для &quot;Рекомендованных к прочтению книг&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Фикс заголовка для &quot;Рекомендованных к прочтению книг&quot;" />
+    <MESSAGE value="Добавлена возможность загружать картинки для книг и пользователей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность загружать картинки для книг и пользователей" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -574,14 +610,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Controller/LuckyController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.dist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -660,14 +688,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/list/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-47">
-          <caret line="4" column="81" selection-start-line="4" selection-start-column="81" selection-end-line="4" selection-end-column="81" />
           <folding />
         </state>
       </provider>
@@ -778,14 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="37" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/author/booklist.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="72" />
           <folding />
         </state>
       </provider>
@@ -936,39 +948,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-66">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="37" column="228" selection-start-line="37" selection-start-column="228" selection-end-line="37" selection-end-column="228" />
-          <folding>
-            <marker date="1513498436480" expanded="true" signature="3931:4434" ph="SELECT b0_.i... book" />
-            <marker date="1513498436480" expanded="true" signature="5132:5684" ph="SELECT b0_.i... book" />
-            <marker date="1513498436480" expanded="true" signature="6420:6972" ph="SELECT b0_.i... book" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/book/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/services.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="6" column="4" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="16" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/author/booklist.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="550">
+          <caret line="28" column="134" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="12" />
+          <folding>
+            <marker date="1513506889765" expanded="true" signature="2719:2754" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -982,51 +984,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="51" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="51" />
+        <state relative-caret-position="477">
+          <caret line="34" column="77" selection-start-line="34" selection-start-column="77" selection-end-line="34" selection-end-column="77" />
           <folding>
             <marker date="1513499814053" expanded="true" signature="484:564" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/templates/list/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="660">
+          <caret line="33" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="987">
-          <caret line="123" column="110" selection-start-line="123" selection-start-column="110" selection-end-line="123" selection-end-column="110" />
+        <state relative-caret-position="635">
+          <caret line="176" column="0" selection-start-line="176" selection-start-column="0" selection-end-line="180" selection-end-column="14" />
           <folding>
             <element signature="e#116#136#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2831">
+          <caret line="186" column="28" selection-start-line="186" selection-start-column="28" selection-end-line="186" selection-end-column="28" />
+          <folding>
+            <marker date="1513511377445" expanded="true" signature="3931:4434" ph="SELECT b0_.i... book" />
+            <marker date="1513511377445" expanded="true" signature="5132:5684" ph="SELECT b0_.i... book" />
+            <marker date="1513511377445" expanded="true" signature="6420:6972" ph="SELECT b0_.i... book" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="32" column="66" selection-start-line="32" selection-start-column="66" selection-end-line="32" selection-end-column="78" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#form#0;n#div#0;n#div#0;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-870">
-          <caret line="195" column="73" selection-start-line="195" selection-start-column="73" selection-end-line="195" selection-end-column="73" />
+        <state relative-caret-position="538">
+          <caret line="220" column="112" selection-start-line="220" selection-start-column="112" selection-end-line="220" selection-end-column="112" />
           <folding>
             <element signature="e#118#140#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.yaml">
+    <entry file="file://$PROJECT_DIR$/templates/book/search_results.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="10" />
-          <folding>
-            <marker date="1513499872989" expanded="true" signature="2605:2640" ph="..." />
-          </folding>
+        <state relative-caret-position="616">
+          <caret line="28" column="66" selection-start-line="28" selection-start-column="66" selection-end-line="28" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/book/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="26" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

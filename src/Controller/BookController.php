@@ -100,9 +100,15 @@ class BookController extends Controller
         if (!$book) {
             throw $this->createNotFoundException();
         }
-        if ($this->getUser()->getId()) {
-            $isFavorite = count($em->getRepository(Favorite::class)->findBy(['user_id' => $this->getUser()->getId(), 'book_id' => $id, 'active' => '1']));
+
+        if ($this->getUser()) {
+            if ($this->getUser()->getId()) {
+                $isFavorite = count($em->getRepository(Favorite::class)->findBy(['user_id' => $this->getUser()->getId(), 'book_id' => $id, 'active' => '1']));
+            }
+        } else {
+            $isFavorite = '';
         }
+
 
         $similarBooks = $em->getRepository(Book::class)->findSimilarBooks($book);
 
@@ -212,7 +218,7 @@ class BookController extends Controller
                 $em->flush();
             }
         }
-        return $this->render('book/edit.html.twig', ['form' => $form->createView(), 'image' => $book->getImage()]);
+        return $this->render('book/edit.html.twig', ['form' => $form->createView(), 'image' => $book->getImage() ]);
 
     }
 
@@ -258,6 +264,27 @@ class BookController extends Controller
         );
 
         return $this->redirectToRoute('edit_book', ['id' => $id]);
+    }
+
+    public function search(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        if (strlen($request->request->get('search_query')) > 3) {
+            $books = $em->getRepository(Book::class)->findBooksByQuery($request->request->get('search_query'));
+            return $this->render('book/search_results.html.twig', ['books' => $books, 'query' => $request->request->get('search_query')]);    
+        } else {
+            $this->addFlash(
+                'danger',
+                'Слишком короткий поисковый запрос'
+            );
+
+            return $this->redirect(
+                $request
+                    ->headers
+                    ->get('referer')
+            );
+        }
     }
 
 }

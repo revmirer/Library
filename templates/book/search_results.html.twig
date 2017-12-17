@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Результаты поиска по запросу "{{ query }}" {% endblock %}
+{% block body %}
+    <div class="div-inline"><h1 class="mt-5 div-inline">Результаты поиска по запросу "{{ query }}"</h1></div>
+
+    {% if books is empty %}
+        <h2>Ничего не найдено</h2>
+    {% else %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Рейтинг</th>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Жанр</th>
+                <th>Добавлено</th>
+                <th>Издано</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+                <tr>
+                    <th scope="row">+{{ book.raiting }}-</th>
+                    <td><a href="{{ path('show_book', {'id':  book.id }) }}">{{ book.title }}</a></td>
+                    <td><a href="{{ path('filter_books_by_author', {'filterId':  book.author_id }) }}">{{ book.author_name }}</a></td>
+                    <td><a href="{{ path('filter_books_by_genre', {'filterId':  book.genre_id }) }}">{{ book.genre }}</a></td>
+                    <td>{{ book.added_on|date("d.m.Y") }}</td>
+                    <td>{{ book.published_on|date("d.m.Y") }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+{% endblock %}
