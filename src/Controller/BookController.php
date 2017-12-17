@@ -93,8 +93,11 @@ class BookController extends Controller
             $isFavorite = count($em->getRepository(Favorite::class)->findBy(['user_id' => $this->getUser()->getId(), 'book_id' => $id, 'active' => '1']));
         }
 
+        $similarBooks = $em->getRepository(Book::class)->findSimilarBooks($book);
+//        var_dump($similarBooks);
 
-        return $this->render('book/show.html.twig', ['book' => $book[0], 'isFavorite' => $isFavorite]);
+
+        return $this->render('book/show.html.twig', ['book' => $book[0], 'isFavorite' => $isFavorite, 'similarBooks' => $similarBooks]);
     }
 
     public function showFilteredByAuthorBooks($filterId)

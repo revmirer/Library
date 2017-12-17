@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03420582-f6dd-41cd-9c19-efdf34549613" name="Default" comment="">
+    <list default="true" id="03420582-f6dd-41cd-9c19-efdf34549613" name="Default" comment="Добавлена возможность добавлять книги в избранное">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/bundles.php" afterPath="$PROJECT_DIR$/config/bundles.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/doctrine/Favorite.orm.yml" afterPath="$PROJECT_DIR$/config/doctrine/Favorite.orm.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/doctrine/User.orm.yml" afterPath="$PROJECT_DIR$/config/doctrine/User.orm.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.yaml" afterPath="$PROJECT_DIR$/config/routes.yaml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/BookController.php" afterPath="$PROJECT_DIR$/src/Controller/BookController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/UserController.php" afterPath="$PROJECT_DIR$/src/Controller/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entity/Favorite.php" afterPath="$PROJECT_DIR$/src/Entity/Favorite.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/BookRepository.php" afterPath="$PROJECT_DIR$/src/Repository/BookRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/FavoriteRepository.php" afterPath="$PROJECT_DIR$/src/Repository/FavoriteRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony.lock" afterPath="$PROJECT_DIR$/symfony.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/book/show.html.twig" afterPath="$PROJECT_DIR$/templates/book/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/user/edit.html.twig" afterPath="$PROJECT_DIR$/templates/user/edit.html.twig" />
     </list>
     <ignored path="Library.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,32 +27,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="routes.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.yaml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="9" />
-              <folding>
-                <marker date="1513431714894" expanded="true" signature="2432:2467" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="170" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="170" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="685">
               <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
               <folding>
                 <element signature="e#116#136#0#PHP" expanded="true" />
@@ -75,8 +42,8 @@
       <file leaf-file-name="BookController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="92" column="154" selection-start-line="92" selection-start-column="154" selection-end-line="92" selection-end-column="154" />
+            <state relative-caret-position="543">
+              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding>
                 <element signature="e#118#140#0#PHP" expanded="true" />
               </folding>
@@ -84,21 +51,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Favorite.orm.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/doctrine/Favorite.orm.yml">
+      <file leaf-file-name="BookRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+            <state relative-caret-position="494">
+              <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+              <folding>
+                <element signature="e#34#54#0#PHP" expanded="true" />
+                <marker date="1513489698652" expanded="true" signature="3913:4347" ph="SELECT b0_.i... book" />
+                <marker date="1513489698652" expanded="true" signature="3913:4416" ph="SELECT b0_.i... book" />
+                <marker date="1513489698652" expanded="true" signature="3913:4430" ph="SELECT b0_.i... Book" />
+                <marker date="1513489698652" expanded="true" signature="3913:4515" ph="SELECT b0_.i... Book" />
+                <marker date="1513489698652" expanded="true" signature="5114:5666" ph="SELECT b0_.i... book" />
+                <marker date="1513489698652" expanded="true" signature="6402:6954" ph="SELECT b0_.i... book" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
+      <file leaf-file-name="Book.orm.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/doctrine/Book.orm.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="631">
-              <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Book.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Book.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractQuery.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="729" column="20" selection-start-line="729" selection-start-column="20" selection-end-line="729" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -125,20 +130,10 @@
         </entry>
       </file>
       <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/genre/edit.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="35" selection-start-line="2" selection-start-column="35" selection-end-line="2" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/user/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="679">
+              <caret line="39" column="15" selection-start-line="10" selection-start-column="3" selection-end-line="39" selection-end-column="15" />
               <folding>
                 <marker date="1513434706552" expanded="true" signature="314:394" ph="..." />
               </folding>
@@ -199,11 +194,11 @@
         <option value="$PROJECT_DIR$/config/routes.yaml" />
         <option value="$PROJECT_DIR$/src/Repository/FavoriteRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/Favorite.php" />
-        <option value="$PROJECT_DIR$/src/Controller/BookController.php" />
-        <option value="$PROJECT_DIR$/templates/book/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/Repository/BookRepository.php" />
         <option value="$PROJECT_DIR$/templates/user/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/templates/book/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/BookController.php" />
+        <option value="$PROJECT_DIR$/src/Repository/BookRepository.php" />
       </list>
     </option>
   </component>
@@ -361,6 +356,24 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Library" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -424,7 +437,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="settings.editor.splitter.proportion" value="0.22113504" />
-    <property name="SearchEverywhereHistoryKey" value="BookRe&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;Book&#9;FILE&#9;file://F:/Работа/Library/src/Controller/BookController.php&#10;Fa&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Favorite.php&#10;User&#9;FILE&#9;file://F:/Работа/Library/src/Controller/UserController.php&#10;route&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;rout&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;rou&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Aut&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Author.php&#10;base&#9;FILE&#9;file://F:/Работа/Library/templates/base.html.twig&#10;IndexC&#9;null&#9;null&#10;EntityRepo&#9;null&#9;null&#10; srcDevDebugProjectContainer&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="show&#9;FILE&#9;file://F:/Работа/Library/templates/book/show.html.twig&#10;BookRe&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;Book&#9;FILE&#9;file://F:/Работа/Library/src/Controller/BookController.php&#10;Fa&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Favorite.php&#10;User&#9;FILE&#9;file://F:/Работа/Library/src/Controller/UserController.php&#10;route&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;rout&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;rou&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Aut&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Author.php&#10;base&#9;FILE&#9;file://F:/Работа/Library/templates/base.html.twig&#10;IndexC&#9;null&#9;null&#10;EntityRepo&#9;null&#9;null&#10; srcDevDebugProjectContainer&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -487,7 +500,7 @@
       <workItem from="1512323359435" duration="29049000" />
       <workItem from="1512928163852" duration="24190000" />
       <workItem from="1513126627897" duration="847000" />
-      <workItem from="1513213897667" duration="45501000" />
+      <workItem from="1513213897667" duration="53266000" />
     </task>
     <task id="LOCAL-00001" summary="Изначальный комит">
       <created>1512328333412</created>
@@ -552,11 +565,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513421558309</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Добавлена возможность добавлять книги в избранное">
+      <created>1513435138008</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1513435138008</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104745000" />
+    <option name="totallyTimeSpent" value="112510000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1058" extended-state="6" />
@@ -620,22 +640,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/packages/translation.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/doctrine/Author.orm.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Author.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -886,14 +890,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="910" column="20" selection-start-line="910" selection-start-column="20" selection-end-line="910" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/doctrine/User.orm.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -979,7 +975,7 @@
         <state relative-caret-position="594">
           <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
           <folding>
-            <element signature="e#118#142#0#PHP" expanded="true" />
+            <element signature="e#118#142#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1002,14 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="170" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="170" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/doctrine/Favorite.orm.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1018,10 +1006,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/genre/booklist.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        <state relative-caret-position="685">
+          <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
+          <folding>
+            <element signature="e#116#136#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Book.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/doctrine/Book.orm.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1034,40 +1040,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/AbstractQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="729" column="20" selection-start-line="729" selection-start-column="20" selection-end-line="729" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/templates/user/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="38" selection-end-column="16" />
+        <state relative-caret-position="679">
+          <caret line="39" column="15" selection-start-line="10" selection-start-column="3" selection-end-line="39" selection-end-column="15" />
           <folding>
             <marker date="1513434706552" expanded="true" signature="314:394" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
+    <entry file="file://$PROJECT_DIR$/templates/genre/booklist.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        <state relative-caret-position="264">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="92" column="154" selection-start-line="92" selection-start-column="154" selection-end-line="92" selection-end-column="154" />
+        <state relative-caret-position="543">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding>
             <element signature="e#118#140#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/UserController.php">
+    <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="124" column="44" selection-start-line="124" selection-start-column="44" selection-end-line="124" selection-end-column="44" />
+        <state relative-caret-position="494">
+          <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
           <folding>
-            <element signature="e#116#136#0#PHP" expanded="true" />
+            <element signature="e#34#54#0#PHP" expanded="true" />
+            <marker date="1513489698652" expanded="true" signature="3913:4347" ph="SELECT b0_.i... book" />
+            <marker date="1513489698652" expanded="true" signature="3913:4416" ph="SELECT b0_.i... book" />
+            <marker date="1513489698652" expanded="true" signature="3913:4430" ph="SELECT b0_.i... Book" />
+            <marker date="1513489698652" expanded="true" signature="3913:4515" ph="SELECT b0_.i... Book" />
+            <marker date="1513489698652" expanded="true" signature="5114:5666" ph="SELECT b0_.i... book" />
+            <marker date="1513489698652" expanded="true" signature="6402:6954" ph="SELECT b0_.i... book" />
           </folding>
         </state>
       </provider>

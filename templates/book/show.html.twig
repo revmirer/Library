@@ -17,4 +17,33 @@
             <div><a href="{{ path('add_to_favorites', {'id':  book.id }) }}"><button type="button" class="btn btn-secondary btn-sm">Добавить в избранное</button></a></div>
         {% endif %}
     {% endif %}
+
+    {% if similarBooks %}
+        <div class="div-inline"><h1 class="mt-5 div-inline">Похожие книги</h1></div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Рейтинг</th>
+                <th>Название</th>
+                <th>Автор</th>
+                <th>Жанр</th>
+                <th>Добавлено</th>
+                <th>Издано</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in similarBooks %}
+                <tr>
+                    <th scope="row">+{{ book.raiting }}-</th>
+                    <td><a href="{{ path('show_book', {'id':  book.id }) }}">{{ book.title }}</a></td>
+                    <td><a href="{{ path('filter_books_by_author', {'filterId':  book.author_id }) }}">{{ book.author_name }}</a></td>
+                    <td><a href="{{ path('filter_books_by_genre', {'filterId':  book.genre_id }) }}">{{ book.genre }}</a></td>
+                    <td>{{ book.added_on|date("d.m.Y") }}</td>
+                    <td>{{ book.published_on|date("d.m.Y") }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
 {% endblock %}
