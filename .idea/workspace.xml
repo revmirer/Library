@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03420582-f6dd-41cd-9c19-efdf34549613" name="Default" comment="Добавлена возможность добавлять книги в избранное">
+    <list default="true" id="03420582-f6dd-41cd-9c19-efdf34549613" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/BookController.php" afterPath="$PROJECT_DIR$/src/Controller/BookController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Repository/BookRepository.php" afterPath="$PROJECT_DIR$/src/Repository/BookRepository.php" />
@@ -42,8 +42,8 @@
       <file leaf-file-name="BookController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="367">
+              <caret line="95" column="81" selection-start-line="95" selection-start-column="81" selection-end-line="95" selection-end-column="81" />
               <folding>
                 <element signature="e#118#140#0#PHP" expanded="true" />
               </folding>
@@ -55,15 +55,15 @@
         <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="494">
-              <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+              <caret line="172" column="59" selection-start-line="172" selection-start-column="59" selection-end-line="172" selection-end-column="59" />
               <folding>
                 <element signature="e#34#54#0#PHP" expanded="true" />
-                <marker date="1513489698652" expanded="true" signature="3913:4347" ph="SELECT b0_.i... book" />
-                <marker date="1513489698652" expanded="true" signature="3913:4416" ph="SELECT b0_.i... book" />
-                <marker date="1513489698652" expanded="true" signature="3913:4430" ph="SELECT b0_.i... Book" />
-                <marker date="1513489698652" expanded="true" signature="3913:4515" ph="SELECT b0_.i... Book" />
-                <marker date="1513489698652" expanded="true" signature="5114:5666" ph="SELECT b0_.i... book" />
-                <marker date="1513489698652" expanded="true" signature="6402:6954" ph="SELECT b0_.i... book" />
+                <marker date="1513490145607" expanded="true" signature="3913:4347" ph="SELECT b0_.i... book" />
+                <marker date="1513490145607" expanded="true" signature="3913:4416" ph="SELECT b0_.i... book" />
+                <marker date="1513490145607" expanded="true" signature="3913:4430" ph="SELECT b0_.i... Book" />
+                <marker date="1513490145607" expanded="true" signature="3913:4515" ph="SELECT b0_.i... Book" />
+                <marker date="1513490145607" expanded="true" signature="5114:5666" ph="SELECT b0_.i... book" />
+                <marker date="1513490145607" expanded="true" signature="6402:6954" ph="SELECT b0_.i... book" />
               </folding>
             </state>
           </provider>
@@ -72,8 +72,8 @@
       <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
+            <state relative-caret-position="235">
+              <caret line="21" column="87" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -196,8 +196,8 @@
         <option value="$PROJECT_DIR$/src/Entity/Favorite.php" />
         <option value="$PROJECT_DIR$/templates/user/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/templates/book/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/BookController.php" />
+        <option value="$PROJECT_DIR$/templates/book/show.html.twig" />
         <option value="$PROJECT_DIR$/src/Repository/BookRepository.php" />
       </list>
     </option>
@@ -500,7 +500,7 @@
       <workItem from="1512323359435" duration="29049000" />
       <workItem from="1512928163852" duration="24190000" />
       <workItem from="1513126627897" duration="847000" />
-      <workItem from="1513213897667" duration="53266000" />
+      <workItem from="1513213897667" duration="53684000" />
     </task>
     <task id="LOCAL-00001" summary="Изначальный комит">
       <created>1512328333412</created>
@@ -572,11 +572,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513435138008</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Добавлен раздел &quot;похожие книги&quot; на страницу книги">
+      <created>1513489769286</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1513489769286</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112510000" />
+    <option name="totallyTimeSpent" value="112928000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1058" extended-state="6" />
@@ -625,7 +632,8 @@
     <MESSAGE value="-Добавлена логика работы с пользователями&#10;-Добавлена страница книги&#10;-Добавлена кастомная стрнаница 404ой ошибки&#10;" />
     <MESSAGE value="-Добавлена логика работы с пользователями&#10;-Добавлена страница книги&#10;-Добавлена кастомная страница 404ой ошибки&#10;" />
     <MESSAGE value="Добавлена возможность добавлять книги в избранное" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена возможность добавлять книги в избранное" />
+    <MESSAGE value="Добавлен раздел &quot;похожие книги&quot; на страницу книги" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен раздел &quot;похожие книги&quot; на страницу книги" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1066,36 +1074,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="21" column="73" selection-start-line="21" selection-start-column="73" selection-end-line="21" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="367">
+          <caret line="95" column="81" selection-start-line="95" selection-start-column="81" selection-end-line="95" selection-end-column="81" />
           <folding>
             <element signature="e#118#140#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/book/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="21" column="87" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/BookRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
-          <caret line="147" column="9" selection-start-line="147" selection-start-column="9" selection-end-line="147" selection-end-column="9" />
+          <caret line="172" column="59" selection-start-line="172" selection-start-column="59" selection-end-line="172" selection-end-column="59" />
           <folding>
             <element signature="e#34#54#0#PHP" expanded="true" />
-            <marker date="1513489698652" expanded="true" signature="3913:4347" ph="SELECT b0_.i... book" />
-            <marker date="1513489698652" expanded="true" signature="3913:4416" ph="SELECT b0_.i... book" />
-            <marker date="1513489698652" expanded="true" signature="3913:4430" ph="SELECT b0_.i... Book" />
-            <marker date="1513489698652" expanded="true" signature="3913:4515" ph="SELECT b0_.i... Book" />
-            <marker date="1513489698652" expanded="true" signature="5114:5666" ph="SELECT b0_.i... book" />
-            <marker date="1513489698652" expanded="true" signature="6402:6954" ph="SELECT b0_.i... book" />
+            <marker date="1513490145607" expanded="true" signature="3913:4347" ph="SELECT b0_.i... book" />
+            <marker date="1513490145607" expanded="true" signature="3913:4416" ph="SELECT b0_.i... book" />
+            <marker date="1513490145607" expanded="true" signature="3913:4430" ph="SELECT b0_.i... Book" />
+            <marker date="1513490145607" expanded="true" signature="3913:4515" ph="SELECT b0_.i... Book" />
+            <marker date="1513490145607" expanded="true" signature="5114:5666" ph="SELECT b0_.i... book" />
+            <marker date="1513490145607" expanded="true" signature="6402:6954" ph="SELECT b0_.i... book" />
           </folding>
         </state>
       </provider>

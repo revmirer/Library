@@ -94,7 +94,6 @@ class BookController extends Controller
         }
 
         $similarBooks = $em->getRepository(Book::class)->findSimilarBooks($book);
-//        var_dump($similarBooks);
 
 
         return $this->render('book/show.html.twig', ['book' => $book[0], 'isFavorite' => $isFavorite, 'similarBooks' => $similarBooks]);

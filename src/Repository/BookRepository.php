@@ -171,7 +171,6 @@ class BookRepository extends ServiceEntityRepository
             }
 
             $results = array_merge($results, $tempResults);
-            $bookLimit -= count($tempResults);
         }
 
         return $results;
