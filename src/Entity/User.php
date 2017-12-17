@@ -19,6 +19,7 @@ class User implements UserInterface, \Serializable
     private $password;
     private $email;
     private $is_active;
+    private $image;
 
     public function __construct()
     {
@@ -112,8 +113,6 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
-            // see section on salt below
-            // $this->salt,
         ));
     }
 
@@ -124,8 +123,6 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
-            // see section on salt below
-            // $this->salt
             ) = unserialize($serialized);
     }
 
@@ -136,12 +133,27 @@ class User implements UserInterface, \Serializable
 
     public function getSalt()
     {
-        // you *may* need a real salt depending on your encoder
-        // see section on salt below
+
         return null;
     }
 
     public function eraseCredentials()
     {
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 }

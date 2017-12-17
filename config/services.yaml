@@ -2,6 +2,12 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: 'en'
+    book_image_directory: '%kernel.project_dir%/public/images/book/'
+    user_image_directory: '%kernel.project_dir%/public/images/user/'
+    book_image_x: 500
+    book_image_y: 300
+    user_image_x: 250
+    user_image_y: 250
 
 services:
     # default configuration for services in *this* file

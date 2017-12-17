@@ -20,3 +20,5 @@ App\Entity\User:
         type: boolean
         options:
           default: true
+      image:
+        type: string

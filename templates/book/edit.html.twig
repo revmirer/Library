@@ -4,6 +4,10 @@
 {% block body %}
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
     <div class="div-inline"><h1 class="mt-5 div-inline">Книга</h1></div>
+    {% if image %}
+        <img src="{{ asset('images/book/'~image )}}"/>
+        <div><a href="{{ path('remove_book_picure', {'id':  form.vars.value.id }) }}">Удалить картинку</a></div>
+    {% endif %}
     {{ form_start(form) }}
 
     {{ form_end(form) }}

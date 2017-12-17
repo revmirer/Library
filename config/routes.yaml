@@ -36,6 +36,12 @@ remove_book:
     requirements:
       id: '\d+'
     methods: ['GET']
+remove_book_picure:
+    path: /book/remove_picture/{id}/
+    controller: App\Controller\BookController::removePicture
+    requirements:
+      id: '\d+'
+    methods: ['GET']
 genres_list:
     path: /genre/all
     controller: App\Controller\GenreController::index
@@ -88,6 +94,10 @@ edit_user:
     path: /user/
     controller: App\Controller\UserController::editLogin
     methods: ['GET', 'POST']
+remove_user_picure:
+    path: /user/remove_picture/
+    controller: App\Controller\UserController::removePicture
+    methods: ['GET']
 add_to_favorites:
     path: /user/favorites/add/{id}
     controller: App\Controller\UserController::addToFavorites

@@ -23,3 +23,5 @@ App\Entity\Book:
           type: integer
         author_id:
           type: integer
+        image:
+          type: string

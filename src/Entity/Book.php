@@ -18,7 +18,8 @@ class Book
     private $raiting;
     private $genre_id;
     private $author_id;
-
+    private $image;
+    
     /**
      * @return mixed
      */
@@ -129,6 +130,22 @@ class Book
     public function setAuthorId($author_id)
     {
         $this->author_id = $author_id;
+    }
+    
+    /**
+     * @return mixed
+     */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param mixed $image
+     */
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 
     

@@ -12,10 +12,12 @@ use App\Entity\Book;
 use App\Entity\Favorite;
 use App\Entity\User;
 use App\Form\UserType;
+use Eventviva\ImageResize;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
@@ -85,18 +87,20 @@ class UserController extends Controller
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository(User::class)->find($user->getId());
 
+        $previousImage = $user->getImage();
         $form = $this->createFormBuilder($user)
             ->setAction($this->generateUrl('edit_user'))
             ->setMethod('POST')
-            ->add('username', TextType::class, ['label' => 'Логин'])
+            ->add('username', TextType::class, ['label' => 'Логин', ])
+            ->add('image', FileType::class, ['label' => 'Аватар', 'data_class' => null])
             ->add('id', HiddenType::class)
-            ->add('Сохранить', SubmitType::class, array('label' => 'Cохранить'))
+            ->add('Сохранить', SubmitType::class, ['label' => 'Cохранить'])
             ->getForm()
         ;
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
-            $user = $em->getRepository(User::class)->findBy(['username' => $request->request->get('form')['username']]);
-            if (count($user) > 0) {
+            $user = $em->getRepository(User::class)->findBy(['username' => $request->request->get('form')['username']])[0];
+            if (count($user) > 0 && $user->getUsername() != $request->request->get('form')['username']) {
                 $this->addFlash(
                     'danger',
                     'Пользователь с таким логином уже существует'
@@ -107,17 +111,39 @@ class UserController extends Controller
                     'Введенные данные невалидны'
                 );
             } else {
+
+                $image = $user->getImage();
+                if ($image) {
+                    if (getimagesize($image)) {
+                        $imageName = md5(uniqid()).'.'.$image->guessExtension();
+                        $image->move(
+                            $this->getParameter('user_image_directory'),
+                            $imageName
+                        );
+                        $image = new ImageResize($this->getParameter('user_image_directory').$imageName);
+                        $image->resizeToBestFit($this->getParameter('user_image_x'), $this->getParameter('user_image_y'));
+                        $image->save($this->getParameter('user_image_directory').$imageName);
+                        $user->setImage($imageName);
+                    } else {
+                        $this->addFlash(
+                            'danger',
+                            'Добавленный вами файл не является картинкой.'
+                        );
+                        return $this->render('user/edit.html.twig', ['form' => $form->createView(), 'image' => $previousImage]);
+                    }
+                }
+
                 $this->addFlash(
                     'success',
-                    'Логин успешно изменен.'
+                    'Данные пользователя успешно изменены.'
                 );
                 $em->flush();
             }
-        } else {
-            $favoriteBooks = $em->getRepository(Book::class)->findFavoriteBooksOfUser($this->getUser()->getId());
         }
 
-        return $this->render('user/edit.html.twig', ['form' => $form->createView(), 'favoriteBooks' => $favoriteBooks]);
+        $favoriteBooks = $em->getRepository(Book::class)->findFavoriteBooksOfUser($this->getUser()->getId());
+
+        return $this->render('user/edit.html.twig', ['form' => $form->createView(), 'favoriteBooks' => $favoriteBooks, 'image' => $user->getImage()]);
     }
 
     public function addToFavorites($id, Request $request)
@@ -191,5 +217,26 @@ class UserController extends Controller
 
         }
     }
+
+    public function removePicture()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()->getRepository(User::class)->find($this->getUser()->getId());
+
+        if (!$user){
+            throw $this->createNotFoundException('');
+        }
+        $user->setImage('');
+
+        $em->flush();
+
+        $this->addFlash(
+            'success',
+            'Картинка была успешно удалена'
+        );
+
+        return $this->redirectToRoute('edit_user');
+    }
+
 
 }

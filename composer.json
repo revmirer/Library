@@ -3,6 +3,7 @@
     "license": "proprietary",
     "require": {
         "php": "^7.0.8",
+        "eventviva/php-image-resize": "^1.6",
         "symfony/asset": "^3.4",
         "symfony/console": "^3.4",
         "symfony/flex": "^1.0",

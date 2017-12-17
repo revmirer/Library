@@ -56,6 +56,9 @@
     "doctrine/orm": {
         "version": "v2.5.13"
     },
+    "eventviva/php-image-resize": {
+        "version": "1.6.8"
+    },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },

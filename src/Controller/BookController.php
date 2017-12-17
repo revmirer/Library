@@ -13,9 +13,11 @@ use App\Entity\Author;
 use App\Entity\Book;
 use App\Entity\Favorite;
 use App\Entity\Genre;
+use Eventviva\ImageResize;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -35,6 +37,7 @@ class BookController extends Controller
             ->setAction($this->generateUrl('create_book'))
             ->setMethod('POST')
             ->add('title', TextType::class, ['label' => 'Название'])
+            ->add('image', FileType::class, array('label' => 'Картинка'))
             ->add('added_on', DateType::class, [
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
@@ -66,12 +69,20 @@ class BookController extends Controller
                     'Введенные данные невалидны'
                 );
             } else {
+                $image = $book->getImage();
+                $imageName = md5(uniqid()).'.'.$image->guessExtension();
+                $image->move(
+                    $this->getParameter('book_image_directory'),
+                    $imageName
+                );
+
+                $book->setImage($imageName);
                 $em->persist($book);
                 $this->addFlash(
                     'success',
                     'Книга добавлена.'
                 );
-                $em->flush();
+//                $em->flush();
                 return $this->redirectToRoute('index');
             }
         }
@@ -129,6 +140,7 @@ class BookController extends Controller
             throw $this->createNotFoundException('');
         }
         $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
+        $previeousImage = $book->getImage();
 
         if (!$book){
             throw $this->createNotFoundException('');
@@ -140,6 +152,7 @@ class BookController extends Controller
         $form = $this->createFormBuilder($book)
             ->setAction($this->generateUrl('edit_book', ['id' => $id]))
             ->setMethod('POST')
+            ->add('image', FileType::class, ['label' => 'Картинка', 'required' => false, 'data_class' => null])
             ->add('title', TextType::class, ['label' => 'Название'])
             ->add('added_on', DateType::class, [
                 'widget' => 'single_text',
@@ -160,17 +173,38 @@ class BookController extends Controller
                 'label' => 'Жанр'
             ])
             ->add('id', HiddenType::class)
-            ->add('Сохранить', SubmitType::class, array('label' => 'Cохранить'))
+            ->add('Сохранить', SubmitType::class, ['label' => 'Cохранить'])
             ->getForm();
 
         if ($request->getMethod() == 'POST') {
             $form->handleRequest($request);
-            if (!$form->isValid()){
+            if (!$form->isValid()) {
                 $this->addFlash(
                     'danger',
                     'Введенные данные невалидны'
                 );
             } else {
+                $image = $book->getImage();
+                if ($image) {
+                    if (getimagesize($image)) {
+                        $imageName = md5(uniqid()).'.'.$image->guessExtension();
+                        $image->move(
+                            $this->getParameter('book_image_directory'),
+                            $imageName
+                        );
+                        $image = new ImageResize($this->getParameter('book_image_directory').$imageName);
+                        $image->resizeToBestFit($this->getParameter('book_image_x'), $this->getParameter('book_image_y'));
+                        $image->save($this->getParameter('book_image_directory').$imageName);
+                        $book->setImage($imageName);
+                    } else {
+                        $this->addFlash(
+                            'danger',
+                            'Добавленный вами файл не является картинкой.'
+                        );
+                        return $this->render('book/edit.html.twig', ['form' => $form->createView(), 'image' => $previeousImage]);
+                    }
+                }
+
                 $this->addFlash(
                     'success',
                     'Информация о книге успешно обновлена.'
@@ -178,8 +212,7 @@ class BookController extends Controller
                 $em->flush();
             }
         }
-
-        return $this->render('book/edit.html.twig', ['form' => $form->createView()]);
+        return $this->render('book/edit.html.twig', ['form' => $form->createView(), 'image' => $book->getImage()]);
 
     }
 
@@ -199,12 +232,32 @@ class BookController extends Controller
             'success',
             'Книга была успешно удалена'
         );
-        
-        
 
         return $this->redirectToRoute('index');
+        
+    }
+    
+    public function removePicture($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if (!$id) {
+            throw $this->createNotFoundException('');
+        }
+        $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
 
+        if (!$book){
+            throw $this->createNotFoundException('');
+        }
+        $book->setImage('');
 
+        $em->flush();
+
+        $this->addFlash(
+            'success',
+            'Картинка была успешно удалена'
+        );
+
+        return $this->redirectToRoute('edit_book', ['id' => $id]);
     }
 
 }
