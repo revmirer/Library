@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="03420582-f6dd-41cd-9c19-efdf34549613" name="Default" comment="Добавлена система рейтинга.&#10;Исправлены небольшие ошибки">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/Version20171216042942.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/Version20171216131349.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/Version20171217062546.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/Version20171217122936.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/Version20171217123125.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Migrations/Version20171218053107.php" />
+    <list default="true" id="03420582-f6dd-41cd-9c19-efdf34549613" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controller/BookController.php" afterPath="$PROJECT_DIR$/src/Controller/BookController.php" />
     </list>
     <ignored path="Library.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,11 +47,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="154">
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -92,11 +87,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BookController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="137" column="85" selection-start-line="137" selection-start-column="85" selection-end-line="137" selection-end-column="85" />
+            <state relative-caret-position="484">
+              <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
               <folding>
                 <element signature="e#118#140#0#PHP" expanded="true" />
               </folding>
@@ -198,9 +193,9 @@
         <option value="$PROJECT_DIR$/src/Controller/AuthorController.php" />
         <option value="$PROJECT_DIR$/src/Controller/GenreController.php" />
         <option value="$PROJECT_DIR$/src/Repository/BookRepository.php" />
-        <option value="$PROJECT_DIR$/src/Controller/BookController.php" />
         <option value="$PROJECT_DIR$/config/doctrine/Book.orm.yml" />
         <option value="$PROJECT_DIR$/templates/list/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/BookController.php" />
       </list>
     </option>
   </component>
@@ -289,7 +284,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="web.server" />
     <property name="settings.editor.splitter.proportion" value="0.22113504" />
-    <property name="SearchEverywhereHistoryKey" value="User.&#9;FILE&#9;file://F:/Работа/Library/config/doctrine/User.orm.yml&#10;Book.or&#9;FILE&#9;file://F:/Работа/Library/config/doctrine/Book.orm.yml&#10;Book&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Book.php&#10;B&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;rou&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;User&#9;FILE&#9;file://F:/Работа/Library/src/Controller/UserController.php&#10;boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;showT&#9;FILE&#9;file://F:/Работа/Library/templates/book/show.html.twig&#10;rout&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;services.y&#9;FILE&#9;file://F:/Работа/Library/config/services.yaml&#10;show&#9;FILE&#9;file://F:/Работа/Library/templates/book/show.html.twig&#10;BookRe&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;Fa&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Favorite.php&#10;route&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;Aut&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Author.php&#10;base&#9;FILE&#9;file://F:/Работа/Library/templates/base.html.twig&#10;IndexC&#9;null&#9;null&#10;EntityRepo&#9;null&#9;null&#10; srcDevDebugProjectContainer&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="BookC&#9;FILE&#9;file://F:/Работа/Library/src/Controller/BookController.php&#10;User.&#9;FILE&#9;file://F:/Работа/Library/config/doctrine/User.orm.yml&#10;Book.or&#9;FILE&#9;file://F:/Работа/Library/config/doctrine/Book.orm.yml&#10;Book&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Book.php&#10;B&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;rou&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;User&#9;FILE&#9;file://F:/Работа/Library/src/Controller/UserController.php&#10;boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;showT&#9;FILE&#9;file://F:/Работа/Library/templates/book/show.html.twig&#10;rout&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;services.y&#9;FILE&#9;file://F:/Работа/Library/config/services.yaml&#10;show&#9;FILE&#9;file://F:/Работа/Library/templates/book/show.html.twig&#10;BookRe&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;Fa&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Favorite.php&#10;route&#9;FILE&#9;file://F:/Работа/Library/config/routes.yaml&#10;Boo&#9;FILE&#9;file://F:/Работа/Library/src/Repository/BookRepository.php&#10;Aut&#9;FILE&#9;file://F:/Работа/Library/src/Entity/Author.php&#10;base&#9;FILE&#9;file://F:/Работа/Library/templates/base.html.twig&#10;IndexC&#9;null&#9;null&#10;EntityRepo&#9;null&#9;null&#10; srcDevDebugProjectContainer&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -352,7 +347,7 @@
       <workItem from="1512323359435" duration="29049000" />
       <workItem from="1512928163852" duration="24190000" />
       <workItem from="1513126627897" duration="847000" />
-      <workItem from="1513213897667" duration="81200000" />
+      <workItem from="1513213897667" duration="81991000" />
     </task>
     <task id="LOCAL-00001" summary="Изначальный комит">
       <created>1512328333412</created>
@@ -459,11 +454,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513575201481</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Добавлены миграции">
+      <created>1513577783923</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1513577783923</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140444000" />
+    <option name="totallyTimeSpent" value="141235000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1058" extended-state="6" />
@@ -537,7 +539,8 @@
     <MESSAGE value="Добавлена возможность загружать картинки для книг и пользователей" />
     <MESSAGE value="Добавлен омнибокс для поиска по книгам" />
     <MESSAGE value="Добавлена система рейтинга.&#10;Исправлены небольшие ошибки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена система рейтинга.&#10;Исправлены небольшие ошибки" />
+    <MESSAGE value="Добавлены миграции" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлены миграции" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -960,16 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="137" column="85" selection-start-line="137" selection-start-column="85" selection-end-line="137" selection-end-column="85" />
-          <folding>
-            <element signature="e#118#140#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Book.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
@@ -1004,9 +997,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="154">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/BookController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
+          <folding>
+            <element signature="e#118#140#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

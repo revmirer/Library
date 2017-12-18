@@ -76,6 +76,11 @@ class BookController extends Controller
                     $this->getParameter('book_image_directory'),
                     $imageName
                 );
+                
+                $image = new ImageResize($this->getParameter('book_image_directory').$imageName);
+                $image->resizeToBestFit($this->getParameter('book_image_x'), $this->getParameter('book_image_y'));
+                $image->save($this->getParameter('book_image_directory').$imageName);
+                $book->setImage($imageName);
 
                 $book->setImage($imageName);
                 $em->persist($book);
