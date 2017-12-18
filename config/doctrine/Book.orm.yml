@@ -25,3 +25,4 @@ App\Entity\Book:
           type: integer
         image:
           type: string
+          nullable: true

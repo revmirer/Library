@@ -9,6 +9,7 @@
 namespace App\Controller;
 
 
+use App\Entity\Book;
 use App\Entity\Genre;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -99,5 +100,36 @@ class GenreController extends Controller
 
         return $this->render('genre/edit.html.twig', ['form' => $form->createView()]);
 
+    }
+
+    public function remove($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if (!$id) {
+            throw $this->createNotFoundException('');
+        }
+
+        $genre = $em->getRepository(Genre::class)->find($id);
+
+        if (!$genre){
+            throw $this->createNotFoundException('');
+        }
+
+        $linkedBooksCount = count($em->getRepository(Book::class)->findBooksByGenreFilter($id));
+        if ($linkedBooksCount) {
+            $this->addFlash(
+                'danger',
+                'Невозможно удалить жанр, пока к нему привязана хотя бы одна книга. '
+            );
+        } else {
+            $em->remove($genre);
+            $em->flush();
+            $this->addFlash(
+                'success',
+                'Жанр успешно удален.'
+            );
+        }
+
+        return $this->redirectToRoute('genres_list');
     }
 }

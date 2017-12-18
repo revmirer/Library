@@ -22,7 +22,26 @@
         <tbody>
             {% for book in books %}
             <tr>
-                <th scope="row">+{{ book.raiting }}-</th>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <td scope="row">
+                        {% if ratings[book.id] is defined %}
+                            {% if ratings[book.id] == 1 %}
+                                &nbsp;
+                                {{ book.score|round(2, 'floor') }}
+                                <a href="{{ path('book_rating_minus', {'id':  book.id }) }}">-</a></td>
+                            {% else %}
+                                <a href="{{ path('book_rating_plus', {'id':  book.id }) }}">+</a>
+                                {{ book.score|round(2, 'floor') }}
+                                &nbsp;
+                            {% endif %}
+                        {% else %}
+                            <a href="{{ path('book_rating_plus', {'id':  book.id }) }}">+</a>
+                            {{ book.score|round(2, 'floor') }}
+                            <a href="{{ path('book_rating_minus', {'id':  book.id }) }}">-</a></td>
+                        {% endif %}
+                {% else %}
+                    <td scope="row">{{ book.score|round(2, 'floor') }}</td>
+                {% endif %}
                 <td><a href="{{ path('show_book', {'id':  book.id }) }}">{{ book.title }}</a></td>
                 <td><a href="{{ path('filter_books_by_author', {'filterId':  book.author_id }) }}">{{ book.author_name }}</a></td>
                 <td><a href="{{ path('filter_books_by_genre', {'filterId':  book.genre_id }) }}">{{ book.genre }}</a></td>

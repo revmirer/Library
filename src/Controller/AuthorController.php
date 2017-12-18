@@ -146,6 +146,8 @@ class AuthorController extends Controller
                 'Невозможно удалить автора, пока к нему привязана хотя бы одна книга. '
             );
         } else {
+            $em->remove($author);
+            $em->flush();
             $this->addFlash(
                 'success',
                 'Автор успешно удален.'

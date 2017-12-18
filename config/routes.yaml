@@ -112,3 +112,9 @@ remove_from_favorites:
     path: /user/favorites/remove/{id}
     controller: App\Controller\UserController::removeFromFavorites
     methods: ['GET', 'POST']
+book_rating_plus:
+  path: /user/book/{id}/plus
+  controller: App\Controller\BookController::addPlus
+book_rating_minus:
+  path: /user/book/{id}/minus
+  controller: App\Controller\BookController::addMinus

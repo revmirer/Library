@@ -13,6 +13,7 @@ use App\Entity\Author;
 use App\Entity\Book;
 use App\Entity\Favorite;
 use App\Entity\Genre;
+use App\Entity\Rating;
 use Eventviva\ImageResize;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
@@ -82,7 +83,7 @@ class BookController extends Controller
                     'success',
                     'Книга добавлена.'
                 );
-//                $em->flush();
+                $em->flush();
                 return $this->redirectToRoute('index');
             }
         }
@@ -134,9 +135,15 @@ class BookController extends Controller
 
     public function showAll()
     {
-        $books = $this->getDoctrine()->getRepository(Book::class)->findAllBooks();
+        $books = $this->getDoctrine()->getRepository(Book::class)->findMainPageBooks();
 
-        return $this->render('list/index.html.twig', ['books' => $books]);
+        $ratings = [];
+        if ($this->getUser())
+        {
+            $ratings = $this->getDoctrine()->getRepository(Rating::class)->findBooksRatingsOfUser($this->getUser()->getId(), $books);
+        }
+
+        return $this->render('list/index.html.twig', ['books' => $books, 'ratings' => $ratings]);
     }
     
     public function edit($id, Request $request)
@@ -234,6 +241,8 @@ class BookController extends Controller
             throw $this->createNotFoundException('');
         }
 
+        $em->remove($book);
+        $em->flush();
         $this->addFlash(
             'success',
             'Книга была успешно удалена'
@@ -285,6 +294,129 @@ class BookController extends Controller
                     ->get('referer')
             );
         }
+    }
+
+    public function addPlus($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if (!$id) {
+            throw $this->createNotFoundException('');
+        }
+
+        $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
+
+        if (!$book){
+            throw $this->createNotFoundException('');
+        }
+
+        $rating = $em->getRepository(Rating::class)->findBy(['user_id' => $this->getUser()->getId(), 'book_id' => $id]);
+
+        if ($rating) {
+            $rating = $rating[0];
+            if ($rating->getScore() == 1) {
+                $this->addFlash(
+                    'success',
+                    'Вы уже поставили плюс этой книге'
+                );
+            } elseif ($rating->getScore() == -1) {
+                $rating->setActive('0');
+                $rating->setScore('0');
+                $this->addFlash(
+                    'success',
+                    'Предыдущая негативная оценка этой книги отменена'
+                );
+                $em->flush();
+            } elseif ($rating->getScore() == 0) {
+                $rating->setActive('1');
+                $rating->setScore('1');
+                $this->addFlash(
+                    'success',
+                    'Положительная оценка этой книги сохранена'
+                );
+                $em->flush();
+            }
+        } else {
+            $rating = new Rating();
+            $rating->setUserId($this->getUser()->getId());
+            $rating->setBookId($id);
+            $rating->setScore(1);
+            $rating->setActive(1);
+            $em->persist($rating);
+            $em->flush();
+            $this->addFlash(
+                'success',
+                'Положительная оценка этой книги сохранена'
+            );
+
+        }
+
+        return $this->redirect(
+            $request
+                ->headers
+                ->get('referer')
+        );
+
+    }
+
+    public function addMinus($id, Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if (!$id) {
+            throw $this->createNotFoundException('');
+        }
+
+        $book = $this->getDoctrine()->getRepository(Book::class)->find($id);
+
+        if (!$book){
+            throw $this->createNotFoundException('');
+        }
+
+        $rating = $em->getRepository(Rating::class)->findBy(['user_id' => $this->getUser()->getId(), 'book_id' => $id]);
+
+        if ($rating) {
+            $rating = $rating[0];
+            if ($rating->getScore() == -1) {
+                $this->addFlash(
+                    'success',
+                    'Вы уже поставили минус этой книге'
+                );
+            } elseif ($rating->getScore() == 1) {
+                $rating->setActive('0');
+                $rating->setScore('0');
+                $this->addFlash(
+                    'success',
+                    'Предыдущая положительная оценка этой книги отменена'
+                );
+                $em->flush();
+            } elseif ($rating->getScore() == 0) {
+                $rating->setActive('1');
+                $rating->setScore('-1');
+                $this->addFlash(
+                    'success',
+                    'Негативная оценка этой книги сохранена'
+                );
+                $em->flush();
+            }
+        } else {
+            $rating = new Rating();
+            $rating->setUserId($this->getUser()->getId());
+            $rating->setBookId($id);
+            $rating->setScore(-1);
+            $rating->setActive(1);
+            $em->persist($rating);
+            $em->flush();
+            $this->addFlash(
+                'success',
+                'Отрицательная оценка этой книги сохранена'
+            );
+
+        }
+
+        return $this->redirect(
+            $request
+                ->headers
+                ->get('referer')
+        );
     }
 
 }

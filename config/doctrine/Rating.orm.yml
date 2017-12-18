@@ -1,0 +1,15 @@
+App\Entity\Rating:
+    type: entity
+    repositoryClass: App\Repository\RatingRepository
+    id:
+      id:
+        type: integer
+        generator: { strategy: AUTO }
+    fields:
+      user_id:
+        type: integer
+      book_id:
+        type: integer
+      score:
+        type: integer
+      active:
